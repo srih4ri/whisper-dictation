@@ -1,0 +1,17 @@
+[Unit]
+Description=Whisper Dictation Service
+After=graphical-session.target ydotool.service
+Wants=ydotool.service
+
+[Service]
+Type=simple
+# UPDATE THIS PATH to match your installation
+ExecStart=/home/skookal/code/srih4ri/whisper-dictation/dictate
+Restart=on-failure
+RestartSec=5
+
+# Environment for audio
+Environment=XDG_RUNTIME_DIR=/run/user/%U
+
+[Install]
+WantedBy=default.target
