@@ -6,7 +6,7 @@ Wants=ydotool.service
 [Service]
 Type=simple
 # UPDATE THIS PATH to match your installation
-ExecStart=/home/skookal/code/srih4ri/whisper-dictation/dictate
+ExecStart=/home/skookal/code/srih4ri/whisper-dictation/dictation.py
 Restart=on-failure
 RestartSec=5
 

@@ -1,4 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# dependencies = [
+#     "faster-whisper>=0.10.0",
+#     "sounddevice>=0.4.6",
+#     "numpy>=1.24.0",
+#     "evdev>=1.6.0",
+# ]
+# ///
 """
 Whisper Dictation - System-wide speech-to-text for Linux (Wayland)
 

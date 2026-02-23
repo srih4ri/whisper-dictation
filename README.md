@@ -11,6 +11,7 @@ System-wide speech-to-text dictation for Ubuntu/Linux using OpenAI's Whisper mod
 - Uses `faster-whisper` for optimized transcription
 - Configurable hotkey and model size
 - Auto-detects language (or can be set explicitly)
+- Single-file script with inline dependencies managed by [uv](https://docs.astral.sh/uv/)
 
 ## Quick Start
 
@@ -22,29 +23,29 @@ chmod +x setup.sh
 # Log out and log back in (required for input group permissions)
 
 # Start dictating
-./dictate
+./dictation.py
 ```
 
 ## Usage
 
 ```bash
 # Default: Right Super key, base model
-./dictate
+./dictation.py
 
 # Use a different hotkey
-./dictate --hotkey KEY_SCROLLLOCK
-./dictate --hotkey KEY_F9
+./dictation.py --hotkey KEY_SCROLLLOCK
+./dictation.py --hotkey KEY_F9
 
 # Use a larger model (more accurate, slower)
-./dictate --model small
-./dictate --model medium
+./dictation.py --model small
+./dictation.py --model medium
 
 # Force a specific language
-./dictate --language en
-./dictate --language es
+./dictation.py --language en
+./dictation.py --language es
 
 # List available hotkeys
-./dictate --list-keys
+./dictation.py --list-keys
 ```
 
 ## Model Sizes
@@ -126,8 +127,9 @@ sudo apt install pulseaudio pavucontrol
 - `ydotool` - Text insertion on Wayland
 - `portaudio19-dev` - Audio capture
 - `libsndfile1` - Audio processing
+- `uv` - Python script runner (installed by setup.sh)
 
-**Python packages:**
+**Python packages** (managed inline by uv):
 - `faster-whisper` - Optimized Whisper implementation
 - `sounddevice` - Audio recording
 - `numpy` - Audio processing
