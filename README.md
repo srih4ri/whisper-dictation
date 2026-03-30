@@ -196,4 +196,4 @@ python3 -c "import sounddevice; print(sounddevice.query_devices())"
 
 ## License
 
-MIT
+[WTFPL](LICENSE) — Do What The Fuck You Want To Public License
