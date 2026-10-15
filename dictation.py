@@ -316,7 +316,9 @@ class DictationService:
         log.debug("xclip: setting clipboard...")
         subprocess.run(
             ["xclip", "-selection", "clipboard"],
-            input=text.encode(), check=True, capture_output=True,
+            input=text.encode(), check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
         )
         time.sleep(0.05)
 
